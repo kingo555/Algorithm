@@ -9,12 +9,15 @@ def solution(a, b, c, d):
         p = max(origin, key=origin.count)
         tmp = [num for num in arr if num != p]
         answer = tmp[0] * tmp[1]
+        
     elif len(arr) == 2:
         if max([origin.count(num) for num in arr]) > 2:
+            
             p = max(origin, key=origin.count)
             q = min(origin, key=origin.count)
             answer = pow(((10 * p) + q), 2)
         else:
+            
             answer = ((arr[0] + arr[1]) * abs(arr[0] - arr[1]))  
     elif len(arr) == 1:
         answer = int(str(arr[0]) * 4)
