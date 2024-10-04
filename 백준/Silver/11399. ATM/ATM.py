@@ -1,15 +1,7 @@
 n = int(input())
-p = list(map(int, input().split()))
+p =list(map(int, input().split()))
 time = 0
-for i in range(0,n-1) :
-    for j in range(0,n-1) :
-        if p[j]>=p[j+1] :
-            continue
-        else :
-            temp = p[j]
-            p[j] = p[j+1]
-            p[j+1] = temp    
-            
-for k in range(1,n+1) :
-    time += k*p[k-1]
+p.sort()
+for i in range(1, n+1) :
+    time = time + sum(p[0:i])
 print(time)
